@@ -1,0 +1,36 @@
+<p>resultado</p>
+
+
+<p>
+  <% resultado = "
+                          USG de tireoide      
+
+Nome: #{@nome}
+Data de Nascimento: #{@data_nascimento}
+Data do Exame: #{@data_exame}
+
+Técnica: 
+Aquisição de imagens através de transdutor linear de alta frequência.
+
+Característica glandular: 
+Tireoide de ecotextura #{@eco_gl}, dimensões #{@dim_gl} e de contornos #{@cont_gl}.
+
+Biometria: 
+Lobo direito: #{@ltd_l} x #{@ltd_ap} x #{@ltd_t} cm, com volume de #{@ltd_vol} ml
+Lobo esquerdo: #{@lte_l} x #{@lte_ap} x #{@lte_t} cm, com volume de #{@lte_vol} ml
+Istmo: #{@istmo_med}
+Volume total: #{@vol_total} ml 
+
+#{@pres_nod}
+
+
+
+
+
+"
+  
+  %>
+</p>
+
+
+<%= simple_format(resultado) %>
