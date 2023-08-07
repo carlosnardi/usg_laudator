@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>USG Laudator - tireoide</title>
+</head>
+
+<body>
+  <h1> USG de tireoide </h1>
+  
+  <form action= '<%= result_tireoide_path %>' method='post'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <label>Nome: </label><input type="text" name='nome' class="id_input_nome"><br>
+    <label>Data de Nascimento: </label><input type="date" name="data_nascimento" class="id_input"><br>
+    <label>Data do exame: </label><input type="datetime-local" name="data_exame" class="id_input_data"><br>
+    <p class=azul>Características glandular: </p>
+    <label>Ecotextura glandular: </label><label>Homogênea: </label><input type="radio"
+      name="eco_gl" value='homogenea'><label>Heterogênea: </label><input type="radio" name="eco_gl" value="heterogenea"><br>
+    <label>Contorno glandular: </label><label>Regular: </label><input type="radio"
+      name="cont_gl" value='regulares'><label>Irregular: </label><input type="radio" name="cont_gl" value="irregulares"><label>Lobulado: </label><input type="radio"
+      name="cont_gl" value='lobulados'><br>
+    <p class=azul>Biometria: </p>
+    <label>LTD: </label><input type="number" step=0.01 name="ltd_l"><label> x </label><input type="number" step=0.01
+      name="ltd_ap"><label> x </label><input type="number" step=0.01 name="ltd_t"><label> cm</label><br>
+    <label>LTE: </label><input type="number" step=0.01 name="lte_l"><label> x </label><input type="number" step=0.01
+      name="lte_ap"><label> x </label><input type="number" step=0.01 name="lte_t"><label> cm</label><br>
+    <label>istmo: </label><input type="number" step=0.01 name="istmo_l"><label> x </label><input type="number" step=0.01
+      name="istmo_ap"><label> x </label><input type="number" step=0.01 name="istmo_t"><label> cm</label><br>
+    <label>Istmo é filiforme? </label><input type="checkbox" name="istmo_filiforme"><br>
+    <p class=azul>Avaliação nodular: </p>
+    <label>Há presença de nódulos? </label><label>Sim </label><input type="radio" name = "pres_nod" value = "tir_nodular"><label>Não
+    </label><input type="radio" name = "pres_nod" value = "tir_anodular"><br>
+
+    <br>
+    <label for="n1">Nódulo 1: </label><br>
+    <input type="number" step=0.01 name="n1_l"><label> x </label><input type="number" step=0.01 name="n1_ap"><label> x
+    </label><input type="number" step=0.01 name="n1_t"><label> cm</label><br>
+
+    <label for="composicao">Composição: </label>
+    <select id="composicao" name="composicao">
+      <option value="nil">---</option>
+      <option value="cistico">Cístico</option>
+      <option value="espongiforme">Espongiforme</option>
+      <option value="misto_c_s">Misto predominantemente cístico</option>
+      <option value="misto_s_c">Misto predominantemente sólido</option>
+      <option value="solido">Sólido</option>
+    </select>
+
+    <label for="ecotextura_nod">Ecotextura: </label>
+    <select id="ecotextura_nod" name="ecotextura_nod">
+      <option value="nil">---</option>
+      <option value="anecoico">Anecóico</option>
+      <option value='isoecoico'>Isoecóico</option>
+      <option value="hiperecoico">Hiperecóico</option>
+      <option value="hipoecoico">Hipoecóico</option>
+      <option value="muito_hipo">Muito hipoecóico</option>
+    </select>
+
+    <label for="formato">Formato: </label>
+    <select id="formato" name="formato">
+      <option value="nil">---</option>
+      <option value="mais_largo">Eixo horizontal maior que o vertical</option>
+      <option value="mais_alto">Eixo vertical maior que o horizontal</option>
+    </select>
+
+    <label for="contorno">Contorno: </label>
+    <select id="contorno" name="contorno">
+      <option value="nil">---</option>
+      <option value="bem_definido">Bem definido</option>
+      <option value="pouco_nitido">Pouco nítido</option>
+      <option value="lobulado">Lobulado</option>
+      <option value="irregular">Irregular</option>
+      <option value="extensao_extra">Extensão extra-tireoidiana</option>
+    </select>
+
+    <label for="foco_eco">Focos ecogênicos: </label>
+    <select id="foco_eco" name="foco_eco">
+      <option value="nil">---</option>
+      <option value="ausente">Ausente</option>
+      <option value="cauda_cometa">Artefato em cauda de cometa</option>
+      <option value="macrocalcificacao">Macrocalcificação</option>
+      <option value="calcificacao_periferica">Calcificação periférica</option>
+      <option value="microcalcificacao">Microcalcificação</option>
+    </select>
+
+    <label for='chammas'>Classificação de Chammas: </label>
+    <select id="chammas" name="chammas">
+      <option value="nil">---</option>
+      <option value="ausencia_fluxo">Ausência de fluxo ao Doppler</option>
+      <option value="fluxo_periferico">Fluxo exclusivamente periférico</option>
+      <option value="fluxo_perif_central">Fluxo predominantemente periférico</option>
+      <option value="fluxo_central_perif">Fluxo predominantemente central</option>
+      <option value="fluxo_central">Fluxo central exuberante</option>
+    </select>
+    
+    <label>IR: </label><input type="number" step='0.01' name='ires'>
+
+    <br><input type="submit" value="Enviar">
+  </form>
+  
+  <%= link_to 'Voltar', home_path %>
+
+
+
+  
+
+</body>
+
+</html>
